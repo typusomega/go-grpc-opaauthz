@@ -1,0 +1,3 @@
+required = [
+    "gopkg.in/resty.v1",
+]

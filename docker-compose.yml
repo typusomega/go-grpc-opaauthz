@@ -1,0 +1,15 @@
+version: '3'
+services:
+  opa:
+    image: openpolicyagent/opa
+    ports:
+      - 8181:8181
+    entrypoint:
+      - /opa
+      - run
+      - --server
+      - --log-level
+      - debug
+      - /policies
+    volumes:
+      - ./example/:/policies

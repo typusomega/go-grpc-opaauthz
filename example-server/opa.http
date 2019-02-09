@@ -1,0 +1,33 @@
+### Lists all available policies
+GET http://localhost:8181/v1/policies
+### Lists all available methods
+GET http://localhost:8181/v1/data/apis/commands
+
+### Verify whether client may invoke command
+POST http://localhost:8181/v1/data/apis/invocation_allowed
+
+{
+  "input": {
+    "method": "/helloworld.Greeter/SayHello",
+    "authToken": "456"
+  }
+}
+
+
+### Verify whether client is an internal client
+POST http://localhost:8181/v1/data/apis/internalClient
+
+{
+  "input": {
+    "authToken": "456"
+  }
+}
+
+### Verify whether client is an external client
+POST http://localhost:8181/v1/data/apis/externalClient
+
+{
+  "input": {
+    "authToken": "456"
+  }
+}
