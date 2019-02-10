@@ -13,6 +13,15 @@ POST http://localhost:8181/v1/data/apis/invocation_allowed
   }
 }
 
+### Verify whether client may invoke command following the simple rego
+POST http://localhost:8181/v1/data/simple/invocation_allowed
+
+{
+  "input": {
+    "method": "/helloworld.Greeter/SayHello",
+    "authToken": "456"
+  }
+}
 
 ### Verify whether client is an internal client
 POST http://localhost:8181/v1/data/apis/internalClient
